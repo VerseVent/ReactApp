@@ -12,6 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 import { auth } from "../../firebase";
 
 const HeaderMenu = (props) => {
+  console.log(props);
   const [modalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation();
   let strDate = "";
@@ -46,7 +47,7 @@ const HeaderMenu = (props) => {
           <Icon name="bars" size={35} color="#fff" />
         </TouchableOpacity>
         <Text style={styles.categoryTitle}>{props.title}</Text>
-        {props.isPlus ? (
+        {props.actionIcon === "plus" ? (
           <TouchableOpacity
             style={styles.categoryIcon}
             onPress={() => {
@@ -55,7 +56,7 @@ const HeaderMenu = (props) => {
           >
             <Icon name="plus" size={35} color="#fff" />
           </TouchableOpacity>
-        ) : (
+        ) : props.actionIcon === "check" ? (
           <TouchableOpacity
             style={styles.categoryIcon}
             onPress={() => {
@@ -65,6 +66,8 @@ const HeaderMenu = (props) => {
           >
             <Icon name="check" size={35} color="#fff" />
           </TouchableOpacity>
+        ) : (
+          <View></View>
         )}
       </View>
       <Modal animationType="fade" transparent={false} visible={modalVisible}>

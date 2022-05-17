@@ -50,7 +50,7 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.body}>
-      <HeaderMenu title="Tasks" isPlus={true} />
+      <HeaderMenu title="Tasks" actionIcon={"plus"} />
 
       <ScrollView>{isComplete ? render(tasks) : <Text></Text>}</ScrollView>
     </View>

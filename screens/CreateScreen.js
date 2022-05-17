@@ -54,7 +54,7 @@ const CreateScreen = () => {
         // data={{ title, description, date }}
         title="Create task"
         taskHandler={taskHandler}
-        isPlus={false}
+        actionIcon={"check"}
       />
       <View style={styles.main_content}>
         {show && (
